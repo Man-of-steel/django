@@ -1,0 +1,79 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+{% load static %}
+<head>
+<title>Alumni Management</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="{%static "alumni/css/style.css" %}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+      <div class="header">
+		     <div class="header_top">
+		     	<div class="wrap">
+				 <div class="logo">
+					 <a href="homepage"><img src="{%static "alumni/images/logo.png" %}" alt="" /></a>
+					 </div>
+				  <div class="menu">
+					<ul>
+						<li><a href="manager_home">Home</a></li>
+				    	<li class="active"><a href="maanger_events">Events</a></li>
+						<li><a href="new_event">New Event</a></li>
+				    	<li><a href="login">LOGOUT</a></li>
+				    	<div class="clear"></div>
+				    </ul>				    
+				 </div>
+			     <div class="clear"></div>
+		      </div>		   
+		  </div>
+  </div>
+     <div class="main">
+     	<div class="wrap">
+     	    <div class="content_top">
+     	    	<div class="events">
+	        			<h2>Upcomming Events</h2>
+						{{username}}
+	        			<div class="section group"> 	
+						{% for event in events %}
+							<div class="grid_1_of_3 events_1_of_3">
+							    <div class="event-time">
+								<h4><span>{{event.name}}</span></h4>
+								  <h4>{{event.from_date}}-{{event.to_date}}</h4>
+								  <div><br>
+								  <a style="color:white;" href="event_details?id={{event.id}}">Click here to Read More</a>
+								  </div>
+							    </div>
+							</div>
+						{% endfor %}
+					   </div>					   
+	        	</div>
+     	    </div>
+		</div>
+     </div>
+     <div class="footer">
+       <div class="wrap">
+        <div class="half-footer" style="border:none">
+        <ul class="adress">
+        	<h3>Catch on</h3>
+            <li><a href="index.html">Events Club</a></li>
+            <li><a href="blog.html">West Coast, CA</a></li>
+            <li><a href="blog.html">Facebook - I Music</a></li>
+            <li><a href="blog.html">Login</a></li>
+            <li><a href="contact.html">yourname(at)companyname.com</a></li>
+        </ul>
+        <div class="footer-pic"><img src="images/foot-icon.png" alt=""></div>
+        </div>
+    	<div class="clear"></div>        
+      </div>
+    </div>
+    <div class="copy">
+    	<p>© 2013 Rights Reseverd | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+    </div>
+</body>
+</html>
+

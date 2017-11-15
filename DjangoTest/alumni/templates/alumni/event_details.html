@@ -1,0 +1,74 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+{% load static %}
+<head>
+<title>Alumni Management</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="{%static "alumni/css/style.css" %}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+      <div class="header">
+		     <div class="header_top">
+		     	<div class="wrap">
+				 <div class="logo">
+					 <a href="homepage"><img src="{%static "alumni/images/logo.png" %}" alt="" /></a>
+					 </div>
+				  <div class="menu">
+					<ul>
+						<li><a href="manager_home">Home</a></li>
+				    	<li class="active"><a href="manager_events">Events</a></li>
+						<li><a href="new_event">New Event</a></li>
+				    	<li><a href="login">LOGOUT</a></li>
+				    	<div class="clear"></div>
+				    </ul>				    
+				 </div>
+			     <div class="clear"></div>
+		      </div>		   
+		  </div>
+  </div>
+     <div class="main">
+     	<div class="wrap">
+     	    <div class="content_top">
+     	    	<div class="events" align='center'>
+	        			<h2>{{event.name}}</h2>
+						<br>
+						<h2>{{event.from_date}} - {{event.to_date}}</h2><br>
+						<h2>{{event.event_description}}</h2>
+						<br>
+						<form method='POST'>
+						<input type='hidden' name='event_id' value='{{event.id}}'/>
+						<input type='hidden' name='username' value='{{request.session.username}}'/>
+						<label style="color:white;">Write your comment here...</label><br>
+						<textarea required rows='10' cols='70' name='comment' id='comment'></textarea><br>
+						<button name="submit_btn" id="submit_btn" style="background-color: #4CAF50;padding: 15px 32px; color: white; border: none;text-align: center;display: inline-block;font-size: 16px;">Post</button>
+						</form>
+	        	</div>
+				<br><br>
+				<div class='events'>
+				<h2>---Comments---</h2>
+				</div>
+				{% for comment in comments%}
+				<div class="footer">
+				<div class="wrap">
+				<h3>User: {{comment.username}}</h3><br>
+				<h3 style="color:white">Comment: {{comment.comment}}</h3><br>
+				<h3 style="color:white">Time: {{comment.time}}</h3><br>
+				<hr>
+				</div>
+				</div>
+				{%endfor%}
+     	    </div>
+		</div>
+     </div>
+    <div class="copy">
+    	<p>© 2017 Rights Reseverd | Design by <a>W3Layouts</a></p>
+    </div>
+</body>
+</html>
+

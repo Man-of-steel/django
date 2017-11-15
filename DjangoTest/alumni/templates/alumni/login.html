@@ -1,0 +1,117 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+{% load static %}
+<title>Alumni Management</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>        
+    <style>
+        form {
+            border: 1px solid #660066;
+            width: 60%;
+        }
+
+input[type=text], input[type=password] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 60%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 20%;
+    border-radius: 20%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+</style>
+</head>
+
+<body>
+<!-- start header -->
+<div class="header_bg">
+<div class="wrap">
+	<div class="header">
+		<div class="logo">
+			<a href="#"><img src="{%static 'images/logo.png' %}" alt=""/> </a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+</div>
+<!-- start header -->
+<div class="header_btm">
+<div class="wrap">
+	<div class="header_sub">
+		
+	   
+	<script type="text/javascript" src="js/script.js"></script>
+	<div class="clear"></div>
+
+		<div class="clear"></div>
+</div>
+</div>
+</div>
+
+<!-- start main -->
+<div class="wrap">
+	<div class="main">
+		<div class="main_text" align="center">
+			<h2>Login</h2>
+		</div>
+                <div align="center">
+                    <form method="post">
+                        <div class="container">
+                          <label><b>Username</b></label><br>
+                          <input type="text" placeholder="Enter Username" name="username" required><br>
+
+                          <label><b>Password</b></label><br>
+                          <input type="password" placeholder="Enter Password" name="password" required>
+
+                          <button type="submit">Login</button>
+                        </div>
+                        New?? <a href="signup">Sign-up</a>
+
+                      </form>
+                </div>
+	</div>
+</div>
+</body>
+</html>
+

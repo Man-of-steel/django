@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+
+{% load static %}
+<head>
+<title>Alumni Management</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="{%static "alumni/css/style.css" %}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<style>
+h1, label, p{
+color : white;
+}
+
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #B42666;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #2D197F;
+}
+
+</style>
+
+
+
+<body>
+      <div class="header">
+		     <div class="header_top">
+		     	<div class="wrap">
+				 <div class="logo">
+					 <a href="index.html"><img src="images/logo.png" alt="" /></a>
+					 </div>
+				  <div class="menu">
+					<ul>
+						<li><a href="alumni_home">Home</a></li>
+				    	<li><a href="alumni_events">Events</a></li>
+						<li class="active"><a href="alumni_profile">Profile</a></li>
+				    	<li><a href="login">LOGOUT</a></li>
+				    	<div class="clear"></div>
+				    </ul>				    
+				 </div>
+			     <div class="clear"></div>
+		      </div>		   
+		  </div>
+  </div>
+     <div class="main">
+     	<div class="wrap">
+		<div align="center">
+     	    <form method='post'>
+			<h1 style="font-size='150%'">Profile Management</h1>
+			<div>
+			<label>First Name</label><br>
+			<input type="text" name="first_name" id="first_name" value="{{request.session.alumni.first_name}}" />
+			</div>
+			<div>
+			<label>Last Name</label><br>
+			<input type="text" name="last_name" id="last_name" value="{{request.session.alumni.last_name}}" />
+			</div>
+			<div>
+			<label>Email</label><br>
+			<input type="text" name="email" id="email" value="{{request.session.alumni.email}}"/>
+			</div>
+			<div>
+			<label>Number</label><br>
+			<input type="text" name="number" id="number" value="{{request.session.alumni.number}}"/>
+			</div>
+			<div>
+			<label>USN</label><br>
+			<input type="text" name="usn" id="usn" value="{{request.session.alumni.usn}}" readonly/>
+			</div>
+			<div>
+			<label>Password</label><br>
+			<input type="text" name="password" id="password" value="{{request.session.alumni.password}}"/>
+			</div>
+			<div>
+			<label>Year of Passing</label><br>
+			<input type="text" name="year_of_passing" id="year_of_passing" value="{{request.session.alumni.year_of_passing}}"/>
+			</div>
+			<div>
+			<label>Current Job</label><br>
+			<input type="text" name="current_job" id="current_job" value="{{request.session.alumni.current_job}}"/>
+			</div>
+			<div>
+			<input type="submit" name="update_btn" id="update_btn" value="Update"/>
+			</div>
+			<br><br>
+			</form>
+			
+		</div>
+		</div>
+     </div>
+     <div class="footer">
+       <div class="wrap">
+    	<div class="half-footer" style="margin-left:0">
+        <ul class="feeds">
+        	<h3>Our Latest feeds</h3>
+            <li><a href="index.html">Lorem ipsum dolor consectetur adiping</a></li>
+            <li><a href="blog.html">Nunc sagittis mollis eros, at venenatis</a></li>
+            <li><a href="blog.html">Morbi nec dolor ipsum vel congugue</a></li>
+            <li><a href="blog.html">Nullam a odio ipsum, at sodales lorem.</a></li>
+            <li><a href="contact.html">Nullam imperdiet vulputate congugue</a></li>
+        </ul>
+        <div class="footer-pic"><img src="images/f-icon.png" alt=""></div>
+        <div class="clear"></div>
+        </div>
+        <div class="half-footer" style="border:none">
+        <ul class="adress">
+        	<h3>Catch on</h3>
+            <li><a href="index.html">Events Club</a></li>
+            <li><a href="blog.html">West Coast, CA</a></li>
+            <li><a href="blog.html">Facebook - I Music</a></li>
+            <li><a href="blog.html">Login</a></li>
+            <li><a href="contact.html">yourname(at)companyname.com</a></li>
+        </ul>
+        <div class="footer-pic"><img src="images/foot-icon.png" alt=""></div>
+        </div>
+    	<div class="clear"></div>        
+      </div>
+    </div>
+    <div class="copy">
+    	<p>2013 Rights Reseverd | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+    </div>
+</body>
+</html>
+
